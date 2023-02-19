@@ -24,7 +24,13 @@
   transform-origin: 0% 0%;
 }
  
-
+@media screen and (max-width:956px){
+  .navbar-brand img {
+    width:100%;
+    max-width:240px;
+    position:relative;
+  }
+}
  
 img.consize {
   transform : translateY(-20px) scale(0.25);
@@ -69,7 +75,7 @@ img.consize {
             <span class="navbar-toggler-icon"></span>
           </button>
        
-          <div class=" collapse navbar-collapse " id="navbarNavDropdown">
+          <div class=" collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto ">
               <li class="nav-item">
                 <a class="nav-link mx-2 active" aria-current="page" href="#">Home</a>
@@ -105,17 +111,17 @@ img.consize {
 
 
 
-      <div  class="container">
+      <div style="padding-top:20vh;padding-bottom:20vh" class="container">
         <div class="row">
             <div style="display:flex;justify-content:center;align-items:center;text-align:center" class="col-sm-6">
-                <div style="padding-top:10vh;padding-bottom:10vh" class="square-wrapper">
+                <div class="square-wrapper">
                     <div class="square"><img style="width:100%" src="demo1.jpg"/></div>
                   </div>
             </div>
 
             <div style="display:flex;justify-content:center;align-items:center;text-align:center" class="col-sm-6">
                 <div>
-                    <div style="padding-top:10vh;padding-bottom:10vh"><h1 style="font-size:66px;font-weight:bold;">How Creative Are You?!</h1><p>They say you only come to peace with yourself when you know yourself better than those around you. Derick knew nothing about this. He thought he had found peace but this was an illusion as he was about to find out with an unexpected occurrence that he actually knew nothing about himself.</p><br><button type="button" class="btn btn-info btn-lg">Know more</button></div>
+                    <div><h1 style="font-size:66px;font-weight:bold;">How Creative Are You?!</h1><p>They say you only come to peace with yourself when you know yourself better than those around you. Derick knew nothing about this. He thought he had found peace but this was an illusion as he was about to find out with an unexpected occurrence that he actually knew nothing about himself.</p><br><button type="button" class="btn btn-info btn-lg">Know more</button></div>
                   </div>
             </div>
             
@@ -129,11 +135,11 @@ img.consize {
 
             <div style="display:flex;justify-content:center;align-items:center;text-align:center" class="col-sm-6">
                 <div>
-                    <div><div style="padding-top:5vh;padding-bottom:5vh"><h1 style="font-size:66px;font-weight:bold;color:#ffffe1">Don't wait for inspiration</h1><p>They say you only come to peace with yourself when you know yourself better than those around you. Derick knew nothing about this. He thought he had found peace but this was an illusion as he was about to find out with an unexpected occurrence that he actually knew nothing about himself.</p><br><button type="button" class="btn btn-dark btn-lg">Know more</button></div></div>
+                    <div><div><h1 style="font-size:66px;font-weight:bold;color:#ffffe1">Don't wait for inspiration</h1><p>They say you only come to peace with yourself when you know yourself better than those around you. Derick knew nothing about this. He thought he had found peace but this was an illusion as he was about to find out with an unexpected occurrence that he actually knew nothing about himself.</p><br><button type="button" class="btn btn-dark btn-lg">Know more</button></div></div>
                   </div>
             </div>
             <div style="display:flex;justify-content:center;align-items:center;text-align:center" class="col-sm-6">
-                <div style="padding-top:5vh;padding-bottom:5vh" class="square-wrapper1">
+                <div class="square-wrapper1">
                     <div class="square"><img style="width:100%" src="demo1.png"/></div>
                   </div>
             </div>
@@ -414,15 +420,15 @@ window.addEventListener('scroll', function() {
     if (!heroActive) {
       heroActive = true
       mainNav.classList.add('bg-dark')
-      
+      if(window.innerWidth < 956) return;
       logoImg.className = 'consize'
     }
   } else {
     if (heroActive) {
       heroActive = false
       mainNav.classList.remove('bg-dark')
-      
-      logoImg.className = 'navbar-brand'
+      if(window.innerWidth < 956) return;
+      logoImg.className = ''
     }
   }
 })
